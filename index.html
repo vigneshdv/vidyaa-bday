@@ -42,20 +42,24 @@
 <script>
     $(document).ready(function () {
         var landingPageConfig = { 
+            minDisplayTime: 2000,
             in : {
                 effect: 'flash',
-                delay: 50,
+                delay: 200,
                 shuffle: true
             },
             out : {
-                effect: 'flash',
-                delay: 50,
+                effect: 'fadeOut',
+                delay: 100,
                 shuffle: true
+            },
+            callback: function () {
+                $.fn.pagepiling.moveSectionDown();
             }
         };
 
         $('#pagepiling').pagepiling();
-        $('.tlt').textillate();
+        $('.tlt').textillate(landingPageConfig);
         
     });
 </script>
