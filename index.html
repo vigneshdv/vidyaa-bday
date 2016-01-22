@@ -17,20 +17,60 @@
     <div id="pagepiling">
         <!--        <div class="blend-red-blue-dark section section-1">-->
         <div class="blend-blue-yellow-light section section-1">
-
             <img src="img/1-min.jpg">
             <div class="landing-page-section">
-                <span class="landing-page-text tlt">
-                    <ul class="texts">
+                <span class="landing-page-text tlt-1">
+                    <ul class="landing-page-texts">
                         <li>Hey Babe!</li>
                         <li>Happy Birthday</li>
                     </ul>
                 </span>
             </div>
         </div>
-        <div class="section section-2">Some section</div>
-        <div class="section section-3">Some section</div>
-        <div class="section section-4">Some section</div>
+        <!--        <div class="blend-pink-light section section-2">-->
+<!--        <div class="blend-blue-light section section-2">-->
+          <div class="blend-pink-yellow-dark section section-2">
+            <img src="img/3-min.jpg">
+            <div class="wishing-page-section">
+                <span class="wishing-page-text tlt-2">
+                    <ul class="wishing-page-texts">
+                        <li>694,224,000 seconds</li>
+                        <li>11,570,400 minutes</li>
+                        <li>192,840 hours</li>
+                        <li>8,035 days</li>
+                        <li>1147 weeks</li>
+                        <li>264 months</li>
+                        <li>22 years</li>
+                        <li>That's how much happiness you've brought us all!</li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+        <div class="blend-red section section-3">
+            <img src="img/2-min.jpg">
+            <div class="greeting-page-section">
+                <span class="greeting-page-text tlt-3">
+                    <ul class="greeting-page-texts">
+                        <li>A special occasion</li>
+                        <li>A day to remember</li>
+                        <li>A reason to celebrate</li>
+                        <li>A little cake &amp; A lot of fun</li>
+                        <li>A year filled with health &amp; happiness</li>
+                        <li>Celebrate the gift of you</li>
+                        <li>Count your age by friends, not years</li>
+                        <li>Count the wishes &amp; all the cheers</li>
+                        <li>Don&#39;t count the years</li>
+                        <li>Live life to its fullest</li>
+                        <li>Not a year older, but a year better</li>
+                        <li>Wishing you a year filled with the joy you bring to others</li>
+                        <li>Wishing you the happiest birthday yet</li>
+                        <li>Happy Birthday Vidyaa !</li>
+                        
+                    </ul>
+                </span>
+            </div>
+        </div>
+
     </div>
 </body>
 <!-- jQuery Libraries -->
@@ -41,26 +81,69 @@
 <script type="text/javascript" src="js/jquery.textillate.js"></script>
 <script>
     $(document).ready(function () {
-        var landingPageConfig = { 
+        
+        var greetingPageConfig = {
+            selector: '.greeting-page-texts',
+            minDisplayTime: 1000,
+            in : {
+                effect: 'fadeIn',
+                delay: 50,
+                
+            },
+            out: {
+                effect: 'fadeOut',
+                delay: 60,
+                
+            }
+        }
+        
+        var wishingPageConfig = {
+            selector: '.wishing-page-texts',
+            minDisplayTime: 2000,
+            in : {
+                effect: 'fadeIn',
+                delay: 50,
+                
+            },
+            out: {
+                effect: 'fadeOut',
+                delay: 60,
+                
+            },
+            callback: function () {
+                setTimeout(function() {
+                    $.fn.pagepiling.moveSectionDown();   
+                    $('.tlt-3').textillate(greetingPageConfig);
+                }, 4000);
+                
+            }
+        }
+        
+        var landingPageConfig = {
+            selector: '.landing-page-texts',
             minDisplayTime: 2000,
             in : {
                 effect: 'flash',
                 delay: 200,
                 shuffle: true
             },
-            out : {
+            out: {
                 effect: 'fadeOut',
                 delay: 100,
                 shuffle: true
             },
             callback: function () {
-                $.fn.pagepiling.moveSectionDown();
+                setTimeout(function () {
+                    $.fn.pagepiling.moveSectionDown();
+                    $('.tlt-2').textillate(wishingPageConfig);
+                }, 1000);
+
             }
         };
 
         $('#pagepiling').pagepiling();
-        $('.tlt').textillate(landingPageConfig);
-        
+        $('.tlt-1').textillate(landingPageConfig);
+
     });
 </script>
 

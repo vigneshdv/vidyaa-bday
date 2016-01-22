@@ -16,10 +16,11 @@
     right: 0;
     top: 0;
 }*/
-.landing-page-section {
+.landing-page-section, .wishing-page-section, .greeting-page-section {
     text-align: center;
 }
-.landing-page-text {
+
+.landing-page-text{
     font-family: 'Permanent Marker', cursive;
     font-size: 6em;
     color: #FFF;
@@ -28,6 +29,28 @@
     border-style: double;
     border-width: 15px;
     border-color: #FFF;
+}
+
+.wishing-page-text {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5em;
+    color: #000;
+    font-weight: 600;
+    padding: 10px;
+    border-bottom-style: double;
+    border-bottom-width: 15px;
+    border-bottom-color: #000;
+}
+
+.greeting-page-text {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5em;
+    color: #FFF;
+    font-weight: 600;
+    padding: 10px;
+    border-bottom-style: double;
+    border-bottom-width: 15px;
+    border-bottom-color: #FFF;
 }
 
 img {
@@ -45,11 +68,11 @@ img {
 
 
 .section-2 {
-    background-color: #c0929d;
+    
 }
 
 .section-3 {
-    background-color: #77b88c;
+/*    background-color: #77b88c;*/
 }
 
 .section-4 {
