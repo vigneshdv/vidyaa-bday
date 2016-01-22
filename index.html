@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Woohoo Test Page</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700|Lobster|Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/colorfilter.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-    <p style="text-align: center">
-        <h3>Hellooo, Internet!</h3>
-    </p>
+    <div id="pagepiling">
+        <!--        <div class="blend-red-blue-dark section section-1">-->
+        <div class="blend-blue-yellow-light section section-1">
+
+            <img src="img/1-min.jpg">
+            <div class="landing-page-section">
+                <span class="landing-page-text tlt">
+                    <ul class="texts">
+                        <li>Hey Babe!</li>
+                        <li>Happy Birthday</li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+        <div class="section section-2">Some section</div>
+        <div class="section section-3">Some section</div>
+        <div class="section section-4">Some section</div>
+    </div>
 </body>
+<!-- jQuery Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+<script type="text/javascript" src="js/jquery.textillate.js"></script>
+<script>
+    $(document).ready(function () {
+        var landingPageConfig = { 
+            in : {
+                effect: 'flash',
+                delay: 50,
+                shuffle: true
+            },
+            out : {
+                effect: 'flash',
+                delay: 50,
+                shuffle: true
+            }
+        };
+
+        $('#pagepiling').pagepiling();
+        $('.tlt').textillate();
+        
+    });
+</script>
+
 </html>
